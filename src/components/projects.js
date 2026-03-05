@@ -60,14 +60,51 @@ function Projects() {
           </p>
         </div>
 
-        {/* PLACEHOLDER FOR NEXT PROJECT */}
+        {/* MY FIRST PORTFOLIO */}
         <div className="project-card secondary">
-          <h3>Upcoming Projects</h3>
+          <h3>My First Portfolio 🌐</h3>
+
           <p className="project-summary">
-            Currently working on smaller applications to strengthen core
-            concepts such as APIs, UI state management, and data handling.
+            A modern and responsive personal portfolio website built to showcase
+            projects, technical skills, and certifications. Focused on clean UI,
+            responsive design, and creating engaging web experiences.
           </p>
-          <p className="coming-soon">More projects coming soon 🚀</p>
+
+          <ul className="project-points">
+            <li>Modern responsive design with clean UI layout</li>
+            <li>Sections for About, Skills, Projects, and Certificates</li>
+            <li>Resume download option integrated</li>
+            <li>Deployed live on Vercel</li>
+          </ul>
+
+          <div className="project-tech">
+            <span>React.js</span>
+            <span>JavaScript</span>
+            <span>HTML5</span>
+            <span>CSS3</span>
+          </div>
+
+          <div className="project-links">
+            <a
+              href="https://github.com/Rajendra-Patil-0017/My-First-Portfolio"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaGithub /> View on GitHub
+            </a>
+            <a
+              href="https://rajendrapatil.vercel.app"
+              target="_blank"
+              rel="noreferrer"
+            >
+              🔗 Live Demo
+            </a>
+          </div>
+
+          <p className="project-future">
+            <strong>Future Scope:</strong> Add more projects, improve UI
+            animations, implement dark/light theme toggle
+          </p>
         </div>
       </div>
     </section>
