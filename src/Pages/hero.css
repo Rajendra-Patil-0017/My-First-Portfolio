@@ -1,0 +1,241 @@
+.hero {
+  min-height: 100vh;
+  padding: 130px 80px 80px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    repeating-linear-gradient(90deg,
+      rgba(255, 255, 255, 0.03) 0,
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 80px);
+}
+
+/* ─── LEFT ─── */
+.hero-inner {
+  max-width: 660px;
+  flex: 1;
+}
+
+.hero-tag {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.hero-heading {
+  font-size: clamp(2.4rem, 6vw, 64px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-heading span {
+  color: #38bdf8;
+}
+
+.hero-heading .muted {
+  color: #9ca3af;
+}
+
+.hero-subtext {
+  font-size: clamp(15px, 2vw, 18px);
+  line-height: 1.7;
+  color: #9ca3af;
+  margin-bottom: 32px;
+}
+
+/* ─── BUTTONS ─── */
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 200ms ease, color 200ms ease,
+    border-color 200ms ease, box-shadow 200ms ease;
+  min-height: 48px;
+  /* touch-friendly */
+  min-width: 130px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn:focus,
+.btn:focus-visible {
+  outline: 3px solid rgba(56, 189, 248, 0.6);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
+
+.btn.primary {
+  background: white;
+  color: black;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: white;
+  border: 1px solid #374151;
+}
+
+.btn.ghost span {
+  margin-left: 6px;
+}
+
+.btn.primary:hover,
+.btn.primary:focus-visible {
+  background: #f3f4f6;
+}
+
+.btn.ghost:hover,
+.btn.ghost:focus-visible {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: #9ca3af;
+}
+
+/* ─── SOCIALS ─── */
+.hero-socials {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.hero-socials a {
+  font-size: 24px;
+  color: #9ca3af;
+  transition: all 0.3s ease;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-socials a:hover {
+  color: white;
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* ─── RIGHT IMAGE ─── */
+.hero-right {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image-card {
+  position: relative;
+  width: 280px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.hero-image-card img {
+  width: 100%;
+  display: block;
+}
+
+/* ─── BADGES ─── */
+.status-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #0f172a;
+  color: #3882f1;
+  font-size: 11px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.location-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: #020617;
+  color: #22c55e;
+  font-size: 11px;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 120px 48px 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    padding: 100px 20px 60px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 36px;
+    min-height: auto;
+  }
+
+  .hero-inner {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-socials {
+    justify-content: center;
+  }
+
+  .hero-right {
+    width: 100%;
+  }
+
+  .hero-image-card {
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 90px 16px 50px;
+    gap: 28px;
+  }
+
+  .hero-image-card {
+    width: 70%;
+    max-width: 240px;
+  }
+
+  .btn {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}

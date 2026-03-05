@@ -1,0 +1,108 @@
+.contact {
+  min-height: 80vh;
+  padding: 120px 24px 100px;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ─── TAG ─── */
+.contact-tag {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+/* ─── TITLE ─── */
+.contact-title {
+  font-size: clamp(1.8rem, 5vw, 42px);
+  margin-bottom: 24px;
+}
+
+.contact-title span {
+  color: #38bdf8;
+}
+
+/* ─── DESCRIPTION ─── */
+.contact-desc {
+  max-width: 680px;
+  font-size: clamp(15px, 2vw, 18px);
+  line-height: 1.7;
+  color: #9ca3af;
+  margin-bottom: 40px;
+}
+
+.contact-desc p {
+  margin-bottom: 12px;
+}
+
+/* ─── SOCIAL ICONS ─── */
+.contact-socials {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-socials a {
+  font-size: 26px;
+  color: #9ca3af;
+  transition: transform 0.25s ease, color 0.25s ease;
+  min-width: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.contact-socials a:hover {
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* ─── FOOTER TEXT ─── */
+.contact-footer {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.contact-footer a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.contact-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .contact {
+    padding: 90px 20px 80px;
+    min-height: auto;
+  }
+
+  .contact-socials {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 80px 16px 60px;
+  }
+
+  .contact-socials {
+    gap: 16px;
+  }
+
+  .contact-socials a {
+    font-size: 22px;
+  }
+}

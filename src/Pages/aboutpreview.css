@@ -1,0 +1,81 @@
+.about-preview {
+  padding: 80px 20px;
+  background: #050505;
+  color: white;
+  text-align: center;
+}
+
+.about-preview-container {
+  max-width: 700px;
+  margin: auto;
+  width: 100%;
+}
+
+.about-preview-tag {
+  color: #888;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+}
+
+.about-preview-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.about-preview-text {
+  color: #b5b5b5;
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.why-title {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.why-list {
+  max-width: 520px;
+  margin: 0 auto 30px auto;
+  text-align: left;
+  color: #b5b5b5;
+  line-height: 1.8;
+}
+
+.why-list p {
+  margin-bottom: 8px;
+}
+
+.about-preview-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 20px;
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  min-height: 48px;
+}
+
+.about-preview-btn:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 600px) {
+  .about-preview {
+    padding: 60px 16px;
+  }
+
+  .why-list {
+    max-width: 100%;
+  }
+}
