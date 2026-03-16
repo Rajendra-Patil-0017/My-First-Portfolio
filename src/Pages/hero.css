@@ -1,24 +1,68 @@
 .hero {
-  min-height: 100vh;
-  padding: 130px 80px 80px 80px;
+  min-height: 90vh;
+  padding: 120px 80px 60px 80px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 40px;
+  align-items: flex-start;
 
   background:
-    linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-    repeating-linear-gradient(90deg,
-      rgba(255, 255, 255, 0.03) 0,
-      rgba(255, 255, 255, 0.03) 1px,
+    linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.03) 0,
+      rgba(255,255,255,0.03) 1px,
       transparent 1px,
-      transparent 80px);
+      transparent 80px
+    );
 }
 
-/* ─── LEFT ─── */
+/* Responsive: stack columns on small screens */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 4rem 1.25rem 2rem; /* reduced padding using rem + inline spacing */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+    min-height: auto;
+  }
+
+  .hero-inner {
+    max-width: 100%;
+    width: 100%;
+    text-align: center; /* center content when stacked */
+    padding: 0;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap; /* allow buttons to wrap without overflow */
+    width: 100%;
+  }
+
+  .hero-right {
+    margin-top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-image-card {
+    width: 90%;
+    max-width: 320px; /* ensure the image doesn't overflow */
+    margin: 0 auto;
+  }
+
+  .hero-heading {
+    font-size: 2.25rem; /* scale down large headings for small screens */
+    line-height: 1.05;
+  }
+}
+
+/* LEFT */
 .hero-inner {
-  max-width: 660px;
-  flex: 1;
+  max-width: 700px;
 }
 
 .hero-tag {
@@ -29,7 +73,7 @@
 }
 
 .hero-heading {
-  font-size: clamp(2.4rem, 6vw, 64px);
+  font-size: 64px;
   line-height: 1.1;
   margin-bottom: 20px;
 }
@@ -43,18 +87,17 @@
 }
 
 .hero-subtext {
-  font-size: clamp(15px, 2vw, 18px);
+  font-size: 18px;
   line-height: 1.7;
   color: #9ca3af;
   margin-bottom: 32px;
 }
 
-/* ─── BUTTONS ─── */
+/* BUTTONS */
 .hero-actions {
   display: flex;
   gap: 16px;
   margin-bottom: 32px;
-  flex-wrap: wrap;
 }
 
 .btn {
@@ -63,22 +106,15 @@
   font-size: 14px;
   cursor: pointer;
   border: none;
-  transition: background-color 200ms ease, color 200ms ease,
-    border-color 200ms ease, box-shadow 200ms ease;
-  min-height: 48px;
-  /* touch-friendly */
-  min-width: 130px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
 }
 
+/* Accessible focus for keyboard users */
 .btn:focus,
 .btn:focus-visible {
-  outline: 3px solid rgba(56, 189, 248, 0.6);
+  outline: 3px solid rgba(56,189,248,0.6);
   outline-offset: 3px;
-  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+  box-shadow: 0 0 0 3px rgba(56,189,248,0.12);
 }
 
 .btn.primary {
@@ -96,33 +132,28 @@
   margin-left: 6px;
 }
 
+/* Hover + keyboard-focus visual feedback for button variants */
 .btn.primary:hover,
 .btn.primary:focus-visible {
-  background: #f3f4f6;
+  background: #f3f4f6; /* slightly lighter than white */
 }
 
 .btn.ghost:hover,
 .btn.ghost:focus-visible {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: #9ca3af;
+  background: rgba(255,255,255,0.04);
+  border-color: #9ca3af; /* subtle border change */
 }
 
-/* ─── SOCIALS ─── */
+/* SOCIALS */
 .hero-socials {
   display: flex;
-  gap: 28px;
-  flex-wrap: wrap;
+  gap: 32px;
 }
 
 .hero-socials a {
   font-size: 24px;
   color: #9ca3af;
   transition: all 0.3s ease;
-  min-width: 44px;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .hero-socials a:hover {
@@ -130,11 +161,9 @@
   transform: translateY(-3px) scale(1.1);
 }
 
-/* ─── RIGHT IMAGE ─── */
+/* RIGHT IMAGE */
 .hero-right {
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
+  margin-top: 50px;
 }
 
 .hero-image-card {
@@ -142,9 +171,9 @@
   width: 280px;
   border-radius: 22px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
 }
 
 .hero-image-card img {
@@ -152,7 +181,7 @@
   display: block;
 }
 
-/* ─── BADGES ─── */
+/* BADGES */
 .status-badge {
   position: absolute;
   top: 12px;
@@ -174,68 +203,4 @@
   font-size: 11px;
   padding: 8px 10px;
   border-radius: 10px;
-}
-
-/* ─── RESPONSIVE ─── */
-@media (max-width: 1024px) {
-  .hero {
-    padding: 120px 48px 60px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column-reverse;
-    padding: 100px 20px 60px;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 36px;
-    min-height: auto;
-  }
-
-  .hero-inner {
-    max-width: 100%;
-    width: 100%;
-    text-align: center;
-  }
-
-  .hero-actions {
-    justify-content: center;
-  }
-
-  .hero-socials {
-    justify-content: center;
-  }
-
-  .hero-right {
-    width: 100%;
-  }
-
-  .hero-image-card {
-    width: 80%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    padding: 90px 16px 50px;
-    gap: 28px;
-  }
-
-  .hero-image-card {
-    width: 70%;
-    max-width: 240px;
-  }
-
-  .btn {
-    width: 100%;
-    min-width: unset;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: center;
-  }
 }

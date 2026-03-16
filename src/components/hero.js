@@ -21,7 +21,7 @@ function Hero() {
         </p>
 
         <div className="hero-actions">
-          <a href="/Resume.pdf" target="_blank" rel="noreferrer" className="btn primary">
+          <a href="/Rajendra_Patil_Resume.pdf" target="_blank" rel="noreferrer" className="btn primary">
             View Resume
           </a>
           <Link to="/projects" className="btn ghost">

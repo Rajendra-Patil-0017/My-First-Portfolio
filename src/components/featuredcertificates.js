@@ -1,19 +1,13 @@
-import "../Pages/certificates.css";
+import { useNavigate } from "react-router-dom";
+import "../Pages/featuredcertificates.css";
 
-function Certificates() {
-  const certificates = [
+function FeaturedCertificates() {
+  const navigate = useNavigate();
+
+  const featured = [
     { title: "ICTDISBP 2026 Internation Conference", issuer: "IMS Ghaziabad", file: "certificate12.pdf" },
     { title: "Acquiring Data", issuer: "Future Skills Prime", file: "certificate11.pdf" },
-    { title: "Introduction to Digital Transformation with Google Cloud", issuer: "Google Cloud", file: "certificate10.pdf" },
-    { title: "AI for Beginners", issuer: "HP LIFE online course", file: "certificate8.pdf" },
     { title: "Data Analytics Job Simulation", issuer: "Deloitte", file: "certificate9.pdf" },
-    { title: "Become Job Ready in Coding (Basics)", issuer: "Simplilearn", file: "certificate1.pdf" },
-    { title: "Introduction to PHP", issuer: "Simplilearn", file: "certificate2.pdf" },
-    { title: "Introduction to Computer Components", issuer: "Simplilearn", file: "certificate3.pdf" },
-    { title: "Java Programming for Beginners", issuer: "Simplilearn", file: "certificate4.pdf" },
-    { title: "OOPs in Java", issuer: "Simplilearn", file: "certificate5.pdf" },
-    { title: "PMP Basics", issuer: "Simplilearn", file: "certificate6.pdf" },
-    { title: "Power BI for Beginners", issuer: "Simplilearn", file: "certificate7.pdf" },
   ];
 
   const openCertificate = (file) => {
@@ -21,15 +15,15 @@ function Certificates() {
   };
 
   return (
-    <section id="certificates" className="certificates">
-      <p className="certificates-tag">— CERTIFICATES</p>
+    <section id="featured-certificates" className="certificates featured-certificates">
+      <p className="certificates-tag">— FEATURED CERTIFICATES</p>
 
       <h2 className="certificates-title">
-        My <span>Certificates</span>
+        Featured <span>Certificates</span>
       </h2>
 
       <div className="certificates-grid">
-        {certificates.map((cert, index) => (
+        {featured.map((cert, index) => (
           <div
             key={index}
             className="certificate-card"
@@ -53,8 +47,14 @@ function Certificates() {
           </div>
         ))}
       </div>
+
+      <div className="view-all-container">
+        <button className="view-all-btn" onClick={() => navigate("/certificates")}>
+          View All Certificates
+        </button>
+      </div>
     </section>
   );
 }
 
-export default Certificates;
+export default FeaturedCertificates;
