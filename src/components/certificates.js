@@ -7,7 +7,7 @@ function Certificates() {
     { title: "Introduction to Digital Transformation with Google Cloud", issuer: "Google Cloud", file: "certificate10.pdf" },
     { title: "AI for Beginners", issuer: "HP LIFE online course", file: "certificate8.pdf" },
     { title: "Data Analytics Job Simulation", issuer: "Deloitte", file: "certificate9.pdf" },
-    { title: "Bulid GenAI LLM Apps", issuer: "Parul University", file: "certificate13.pdf" },
+    { title: "Build GenAI LLM Apps", issuer: "Parul University", file: "certificate13.pdf" },
     { title: "Become Job Ready in Coding (Basics)", issuer: "Simplilearn", file: "certificate1.pdf" },
     { title: "Introduction to PHP", issuer: "Simplilearn", file: "certificate2.pdf" },
     { title: "Introduction to Computer Components", issuer: "Simplilearn", file: "certificate3.pdf" },
