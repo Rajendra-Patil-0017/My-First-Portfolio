@@ -1,13 +1,14 @@
 import "../Pages/certificates.css";
+import { FaFilePdf, FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 function Certificates() {
   const certificates = [
-    { title: "ICTDISBP 2026 Internation Conference", issuer: "IMS Ghaziabad", file: "certificate12.pdf" },
+    { title: "ICTDISBP 2026 International Conference", issuer: "IMS Ghaziabad", file: "certificate12.pdf" },
     { title: "Acquiring Data", issuer: "Future Skills Prime", file: "certificate11.pdf" },
     { title: "Introduction to Digital Transformation with Google Cloud", issuer: "Google Cloud", file: "certificate10.pdf" },
     { title: "AI for Beginners", issuer: "HP LIFE online course", file: "certificate8.pdf" },
     { title: "Data Analytics Job Simulation", issuer: "Deloitte", file: "certificate9.pdf" },
-    { title: "Build GenAI LLM Apps", issuer: "Parul University", file: "certificate13.pdf" },
+    { title: "Build GenAI LLM Apps", issuer: "Parul University", file: "Build GenAI LLM Apps.pdf" },
     { title: "Become Job Ready in Coding (Basics)", issuer: "Simplilearn", file: "certificate1.pdf" },
     { title: "Introduction to PHP", issuer: "Simplilearn", file: "certificate2.pdf" },
     { title: "Introduction to Computer Components", issuer: "Simplilearn", file: "certificate3.pdf" },
@@ -19,6 +20,13 @@ function Certificates() {
 
   const openCertificate = (file) => {
     window.open(`/Certificates/${file}`, "_blank", "noopener,noreferrer");
+  };
+
+  const handleKeyDown = (e, file) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openCertificate(file);
+    }
   };
 
   return (
@@ -34,16 +42,30 @@ function Certificates() {
           <div
             key={index}
             className="certificate-card"
+            role="button"
+            tabIndex="0"
             onClick={() => openCertificate(cert.file)}
+            onKeyDown={(e) => handleKeyDown(e, cert.file)}
+            aria-label={`View ${cert.title} issued by ${cert.issuer}`}
           >
             <div className="certificate-preview">
-              <iframe
-                src={`/Certificates/${cert.file}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
-                title={cert.title}
-                className="certificate-iframe"
-                scrolling="no"
-                tabIndex="-1"
-              ></iframe>
+              {cert.thumbnail ? (
+                <img
+                  src={cert.thumbnail}
+                  alt={cert.title}
+                  className="certificate-thumb-img"
+                  loading="lazy"
+                />
+              ) : (
+                <div className="certificate-placeholder-thumb">
+                  <FaFilePdf className="pdf-icon" />
+                  <span className="pdf-label">VERIFIED CERTIFICATE</span>
+                  <div className="preview-overlay">
+                    <span>View PDF</span>
+                    <FaArrowUpRightFromSquare className="open-icon" />
+                  </div>
+                </div>
+              )}
             </div>
             <div className="certificate-info">
               <h3>{cert.title}</h3>

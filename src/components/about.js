@@ -56,7 +56,7 @@ function About() {
         {/* Resume Button */}
         <div className="about-buttons">
           <a
-            href="/Resume.pdf"
+            href="/Rajendra_Patil_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="resume-btn"

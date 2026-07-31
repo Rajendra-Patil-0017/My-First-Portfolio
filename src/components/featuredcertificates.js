@@ -1,17 +1,25 @@
 import { useNavigate } from "react-router-dom";
 import "../Pages/featuredcertificates.css";
+import { FaFilePdf, FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 function FeaturedCertificates() {
   const navigate = useNavigate();
 
   const featured = [
-    { title: "ICTDISBP 2026 Internation Conference", issuer: "IMS Ghaziabad", file: "certificate12.pdf" },
+    { title: "ICTDISBP 2026 International Conference", issuer: "IMS Ghaziabad", file: "certificate12.pdf" },
     { title: "Acquiring Data", issuer: "Future Skills Prime", file: "certificate11.pdf" },
     { title: "Data Analytics Job Simulation", issuer: "Deloitte", file: "certificate9.pdf" },
   ];
 
   const openCertificate = (file) => {
     window.open(`/Certificates/${file}`, "_blank", "noopener,noreferrer");
+  };
+
+  const handleKeyDown = (e, file) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openCertificate(file);
+    }
   };
 
   return (
@@ -27,16 +35,30 @@ function FeaturedCertificates() {
           <div
             key={index}
             className="certificate-card"
+            role="button"
+            tabIndex="0"
             onClick={() => openCertificate(cert.file)}
+            onKeyDown={(e) => handleKeyDown(e, cert.file)}
+            aria-label={`View ${cert.title} issued by ${cert.issuer}`}
           >
             <div className="certificate-preview">
-              <iframe
-                src={`/Certificates/${cert.file}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
-                title={cert.title}
-                className="certificate-iframe"
-                scrolling="no"
-                tabIndex="-1"
-              ></iframe>
+              {cert.thumbnail ? (
+                <img
+                  src={cert.thumbnail}
+                  alt={cert.title}
+                  className="certificate-thumb-img"
+                  loading="lazy"
+                />
+              ) : (
+                <div className="certificate-placeholder-thumb">
+                  <FaFilePdf className="pdf-icon" />
+                  <span className="pdf-label">VERIFIED CERTIFICATE</span>
+                  <div className="preview-overlay">
+                    <span>View PDF</span>
+                    <FaArrowUpRightFromSquare className="open-icon" />
+                  </div>
+                </div>
+              )}
             </div>
             <div className="certificate-info">
               <h3>{cert.title}</h3>

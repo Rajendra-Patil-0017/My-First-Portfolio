@@ -47,7 +47,7 @@ function Hero() {
 
       <div className="hero-right">
         <div className="hero-image-card">
-          <img src="/hero-image.png" alt="Rajendra" />
+          <img src="/hero-image.webp" alt="Rajendra" />
           <span className="location-badge">BASED IN<br />Surat, India</span>
         </div>
       </div>
